@@ -1,96 +1,128 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import profile from "../../../assets/Image/portfolio.jpeg"
+import { ArrowDown, Download, Mail } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import profile from "../../../assets/Image/portfolio.jpeg";
 
 export default function Hero() {
-  const roles = [
-    "Full Stack Developer",
-    "React & Next.js Developer",
-    "Django REST Developer",
-  ];
 
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-
-  useEffect(() => {
-    const currentRole = roles[index];
-
-    if (charIndex < currentRole.length) {
-      const timeout = setTimeout(() => {
-        setText((prev) => prev + currentRole[charIndex]);
-        setCharIndex((prev) => prev + 1);
-      }, 70);
-
-      return () => clearTimeout(timeout);
-    } else {
-      const reset = setTimeout(() => {
-        setCharIndex(0);
-        setText("");
-        setIndex((prev) => (prev + 1) % roles.length);
-      }, 1500);
-
-      return () => clearTimeout(reset);
+  const handleScroll = () => {
+    const projectsSection = document.getElementById("projects");
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: "smooth" });
     }
-  }, [charIndex, index, roles]);
+  };
 
   return (
-    <section  id="home" className="min-h-screen flex items-center justify-center relative px-6 py-24 bg-[#020617] text-white">
-      <div className="text-center max-w-2xl">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center px-6 bg-[var(--bg)] text-[var(--text)]"
+    >
+      <div className="max-w-5xl w-full grid lg:grid-cols-2 gap-16 items-center">
 
-        {/* Avatar */}
-        <div className="mb-10 relative flex justify-center">
-          <div className="absolute w-32 h-32 rounded-full blur-2xl bg-cyan-500 opacity-30"></div>
+        {/* LEFT */}
+        <div className="space-y-6">
+          
+          <div className="space-y-2">
+            <p className="text-sm tracking-wide text-[var(--text)] opacity-70">
+              SOFTWARE DEVELOPER
+            </p>
+
+            <h1 className="text-5xl lg:text-6xl font-bold text-[var(--text)]">
+              Hi, I&apos;m Sabhya Agrahari
+            </h1>
+          </div>
+
+          <h2 className="text-xl text-[var(--text)] opacity-80">
+            Full Stack Developer | React | Next.js | Django REST
+          </h2>
+
+          <p className="leading-relaxed text-[var(--text)] opacity-70">
+            I build scalable and high-performance web applications using modern 
+            technologies. Focused on writing clean, efficient, and maintainable code.
+          </p>
+
+          {/* Social Links */}
+          <div className="flex gap-4">
+            <a
+              href="https://github.com/sabhya-agrahari"
+              target="_blank"
+              className="opacity-70 hover:opacity-100 transition-opacity"
+            >
+              <FaGithub size={20} />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/sabhya-agrahari-1864621a8/"
+              target="_blank"
+              className="opacity-70 hover:opacity-100 transition-opacity"
+            >
+              <FaLinkedin size={20} />
+            </a>
+
+            <a
+              href="mailto:sabhyaagrahari18@gmail.com"
+              className="opacity-70 hover:opacity-100 transition-opacity"
+            >
+              <Mail size={20} />
+            </a>
+          </div>
+
+          {/* Buttons */}
+          <div className="flex gap-4 pt-4">
+            <button
+  onClick={handleScroll}
+  className="relative cursor-pointer py-3 px-8 text-sm font-medium 
+  inline-flex items-center justify-center gap-2
+  text-[var(--bg)] bg-[var(--text)] 
+  rounded-lg overflow-hidden group 
+  hover:scale-105 transition"
+>
+  {/* SHINE (ABOVE BG, BELOW TEXT) */}
+  <span
+    className="absolute top-0 left-0 h-full w-[40%] 
+    bg-gradient-to-r from-transparent via-white to-transparent 
+    opacity-80 blur-md
+    z-10
+    transform -translate-x-[150%] skew-x-12
+    group-hover:translate-x-[250%]
+    transition-transform duration-700 ease-in-out"
+  ></span>
+
+  {/* TEXT */}
+  <span className="relative z-20 flex items-center gap-2">
+    View Projects
+    <ArrowDown size={16} />
+  </span>
+</button>
+
+            <a
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              className="px-6 py-2.5 text-sm font-medium rounded-md flex items-center gap-2 border border-[var(--text)] hover:bg-[var(--text)] hover:text-[var(--bg)] transition-all duration-300"
+            >
+              <Download size={16} />
+              Download CV
+            </a>
+          </div>
+
+        </div>
+
+        {/* RIGHT */}
+        <div className="flex justify-center lg:justify-end">
           <Image
             src={profile}
-            alt="Sabhya"
-            width={220}
-            height={220}
-            className="rounded-full border-4 border-cyan-400 shadow-lg shadow-cyan-500/40 relative"
+            alt="Sabhya Agrahari"
+            width={320}
+            height={320}
+            className="rounded-md object-cover"
+            priority
           />
         </div>
 
-        {/* Heading */}
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-          Hi, I&apos;m{" "}
-          <span className="text-cyan-400">Sabhya Agrahari</span>
-        </h1>
-
-        {/* Typing */}
-        <h2 className="mt-6 text-lg md:text-xl text-gray-400">
-          I&apos;m a{" "}
-          <span className="text-cyan-400 border-r-2 border-cyan-400 pr-2 animate-pulse">
-            {text}
-          </span>
-        </h2>
-
-        {/* Description */}
-        <p className="mt-8 text-gray-400 leading-relaxed">
-          I build scalable and high-performance web applications using{" "}
-          <span className="text-cyan-400">React, Next.js</span> and{" "}
-          <span className="text-cyan-400">Django REST Framework</span>.
-          <br />
-          Passionate about clean code, strong logic, and solving real-world problems.
-        </p>
-
-        {/* Buttons - Pure Tailwind CSS */}
-        <div className="mt-20 md:mt-24 flex justify-center gap-6 flex-wrap items-center">
-          <a 
-            href="#projects" 
-            className="px-7 py-3.5 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 inline-block text-center no-underline bg-gradient-to-r from-cyan-400 to-blue-500 shadow-md shadow-cyan-500/40 text-white hover:-translate-y-1 hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/60"
-          >
-            View Projects
-          </a>
-
-          <a 
-            href="/cv.pdf" 
-            className="px-7 py-3.5 rounded-full text-sm font-medium cursor-pointer transition-all duration-300 inline-block text-center no-underline border border-blue-500/30 text-gray-300 bg-transparent hover:border-cyan-400 hover:text-cyan-400 hover:-translate-y-1"
-          >
-            Download CV
-          </a>
-        </div>
       </div>
     </section>
   );

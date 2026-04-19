@@ -1,6 +1,44 @@
 @import "tailwindcss";
 
+/* Tailwind v4 custom variant */
+@custom-variant dark (&:where(.dark, .dark *));
+@custom-variant blue (&:where(.blue, .blue *));
+@custom-variant purple (&:where(.purple, .purple *));
 
+/* Base theme */
+:root {
+  --bg: #ffffff;
+  --text: #0f172a;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+.dark {
+  --bg: #020617;
+  --text: #ffffff;
+  --muted: #9ca3af;
+  --border: #374151;
+}
+
+.blue {
+  --bg: #0f172a;
+  --text: #38bdf8;
+  --muted: #7dd3fc;
+  --border: #1e3a8a;
+}
+
+.purple {
+  --bg: #1e1b4b;
+  --text: #c084fc;
+  --muted: #d8b4fe;
+  --border: #4c1d95;
+}
+/* Apply globally */
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
 
 /* ================= TYPOGRAPHY ================= */
 .heading-gradient {
@@ -33,7 +71,6 @@
   100% { transform: translateX(0); }
 }
 
-/* Testimonial Rows */
 .scroll-left {
   animation: scrollLeft 25s linear infinite;
 }
@@ -59,4 +96,10 @@
   section {
     padding: 70px 15px;
   }
+}
+
+
+/* smooth UI */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
