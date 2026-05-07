@@ -1,139 +1,154 @@
 "use client";
 
-import { Trophy, Award, Medal, Star } from "lucide-react";
+import { Trophy, Award } from "lucide-react";
+import ShimmerButton from "../(components)/Button";
 
 export default function Achievements() {
   return (
-    <section className="min-h-screen px-6 py-20 md:pl-36 bg-[#020617] text-white">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen bg-black text-white px-6 py-20">
+      <div className="max-w-4xl mx-auto flex">
 
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-400">
-            Achievements
-          </h2>
-          <p className="text-gray-400 mt-3">
-            My milestones, certifications & accomplishments
-          </p>
+        {/* 🔹 LEFT TIMELINE LINE */}
+        <div className="relative mr-10 hidden md:block">
+          <div className="absolute left-2 top-0 bottom-0 w-[1px] bg-white/10"></div>
         </div>
 
-        {/* 🏆 Academic Achievements */}
-        <div className="mb-14">
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 flex items-center gap-2">
-            <Trophy /> Academic Achievements
-          </h3>
+        {/* 🔹 RIGHT CONTENT */}
+        <div className="flex-1">
 
-          <div className="grid md:grid-cols-2 gap-6">
+          {/* 🔹 HEADING */}
+          <div className="mb-16">
+            <p className="text-xs tracking-[0.4em] text-gray-500 mb-3">
+              ACHIEVEMENTS
+            </p>
 
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-cyan-400/20">
-              <h4 className="font-semibold text-lg flex items-center gap-2">
-                <Medal className="text-yellow-400" /> High School Topper
-              </h4>
-              <p className="text-gray-400 mt-2 text-sm">
-                Secured <span className="text-cyan-400 font-medium">3rd Rank</span> in High School (U.P. Board).
-              </p>
-            </div>
+            <h2 className="text-5xl md:text-7xl font-bold tracking-wide text-white">
+              MILESTONES
+            </h2>
 
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-cyan-400/20">
-              <h4 className="font-semibold text-lg flex items-center gap-2">
-                <Star className="text-pink-400" /> Science Exhibition Winner
-              </h4>
-              <p className="text-gray-400 mt-2 text-sm">
-                Achieved <span className="text-cyan-400 font-medium">1st Rank</span> in Science Exhibition.
-              </p>
-            </div>
-
+            <p className="text-xs tracking-[0.3em] text-gray-600 mt-3">
+              WHAT I’VE ACCOMPLISHED SO FAR
+            </p>
           </div>
-        </div>
 
-        {/* 🎓 Certifications */}
-        <div className="mb-14">
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 flex items-center gap-2">
-            <Award /> Certifications
-          </h3>
+          {/* 🔹 ITEMS */}
+          <div className="space-y-16">
 
-          <div className="grid md:grid-cols-2 gap-6">
+            {/* 🔸 Academic */}
+            <div className="relative">
+              <div className="absolute -left-[34px] top-2 w-3 h-3 border border-white/30 bg-black"></div>
 
-            {[
-              "HP LIFE – AI for Beginners",
-              "HP LIFE – Data Science and Analytics",
-              "NullClass – Data Science Internship",
-              "NullClass – Emotional Detector Training",
-              "Internshala – Data Science Training",
-              "Simplilearn – Power BI for Beginners",
-              "Infoseek Technologies – Java Internship",
-            ].map((cert, i) => (
-              <div
-                key={i}
-                className="p-5 rounded-xl bg-[#0f172a] border border-white/10 hover:border-cyan-400/40 transition"
-              >
-                <p className="text-gray-300">{cert}</p>
+              <p className="text-[10px] tracking-[0.3em] text-gray-500 mb-2">
+                ACADEMIC
+              </p>
+
+              <h3 className="text-lg md:text-xl font-semibold text-white flex items-center gap-2">
+                <Trophy size={18} /> Academic Achievements
+              </h3>
+
+              <ul className="space-y-2 text-gray-300 text-sm leading-6 mt-3">
+                <li>— Secured <span className="text-white">3rd Rank</span> in High School (U.P. Board)</li>
+                <li>— Achieved <span className="text-white">1st Rank</span> in Science Exhibition</li>
+              </ul>
+            </div>
+
+            {/* 🔸 Certifications */}
+            <div className="relative">
+              <div className="absolute -left-[34px] top-2 w-3 h-3 border border-white/30 bg-black"></div>
+
+              <p className="text-[10px] tracking-[0.3em] text-gray-500 mb-2">
+                CERTIFICATIONS
+              </p>
+
+              <h3 className="text-lg md:text-xl font-semibold text-white flex items-center gap-2 mb-6">
+                <Award size={18} /> Certifications
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-4">
+
+                {[
+                  {
+                    name: "HP LIFE – AI for Beginners",
+                    link: "#",
+                  },
+                  {
+                    name: "HP LIFE – Data Science and Analytics",
+                    link: "#",
+                  },
+                  {
+                    name: "NullClass – Data Science Internship",
+                    link: "#",
+                  },
+                  {
+                    name: "Internshala – Data Science Training",
+                    link: "#",
+                  },
+                  {
+                    name: "Simplilearn – Power BI for Beginners",
+                    link: "#",
+                  },
+                  {
+                    name: "Infoseek Technologies – Java Internship",
+                    link: "#",
+                  },
+                ].map((cert, i) => (
+                  <div
+                    key={i}
+                    className="group p-4 rounded-xl border border-white/10 hover:border-white/30 transition-all duration-300 bg-white/[0.02] hover:bg-white/[0.05]"
+                  >
+                    <p className="text-gray-300 text-sm mb-4">
+                      {cert.name}
+                    </p>
+
+                    <ShimmerButton href={cert.link}>
+                      View Certificate
+                    </ShimmerButton>
+                  </div>
+                ))}
+
               </div>
-            ))}
-
-          </div>
-        </div>
-
-        {/* 💼 Professional Highlights */}
-        <div className="mb-14">
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6">
-            Professional Highlights
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                🚀 Improved API performance by <span className="text-cyan-400">30%</span> 
-                using optimization & caching strategies.
-              </p>
             </div>
 
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                🔐 Implemented RBAC & authentication reducing access issues by 
-                <span className="text-cyan-400"> 40%</span>.
+            {/* 🔸 Professional */}
+            <div className="relative">
+              <div className="absolute -left-[34px] top-2 w-3 h-3 border border-white/30 bg-black"></div>
+
+              <p className="text-[10px] tracking-[0.3em] text-gray-500 mb-2">
+                PROFESSIONAL
               </p>
+
+              <h3 className="text-lg md:text-xl font-semibold text-white">
+                Highlights
+              </h3>
+
+              <ul className="space-y-2 text-gray-300 text-sm leading-6 mt-3">
+                <li>— Improved API performance by 30%</li>
+                <li>— Implemented RBAC reducing issues by 40%</li>
+                <li>— Reduced API response time to &lt;200ms</li>
+                <li>— Identified $2.71M unsold inventory</li>
+              </ul>
             </div>
 
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                ⚡ Reduced API response time to <span className="text-cyan-400">&lt;200ms</span>.
+            {/* 🔸 Extra */}
+            <div className="relative">
+              <div className="absolute -left-[34px] top-2 w-3 h-3 border border-white/30 bg-black"></div>
+
+              <p className="text-[10px] tracking-[0.3em] text-gray-500 mb-2">
+                EXTRA
               </p>
-            </div>
 
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                📊 Identified $2.71M unsold inventory in vendor analysis project.
-              </p>
-            </div>
+              <h3 className="text-lg md:text-xl font-semibold text-white">
+                Activities
+              </h3>
 
-          </div>
-        </div>
-
-        {/* 🌟 Extra Activities */}
-        <div>
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6">
-            Extra Activities
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                🎤 Attended workshops on Cyber Security & AI applications.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                💻 Active GitHub contributor with backend & data science projects.
-              </p>
+              <ul className="space-y-2 text-gray-300 text-sm leading-6 mt-3">
+                <li>— Attended workshops on Cyber Security & AI</li>
+                <li>— Active GitHub contributor</li>
+              </ul>
             </div>
 
           </div>
         </div>
-
       </div>
     </section>
   );
