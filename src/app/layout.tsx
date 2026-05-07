@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Suspense } from "react";
-import Sidebar from "./(components)/Sidebar";
+import Sidebar from "./(components)/Navbar";
 // import Navbar from "./(components)/Navbar";
 // import Footer from "./(components)/Footer";
 // import { Toaster } from "react-hot-toast";
+
+import { Raleway } from "next/font/google";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://yourdomain.com"),
