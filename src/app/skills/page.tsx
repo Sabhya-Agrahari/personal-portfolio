@@ -1,4 +1,5 @@
 "use client";
+import { Sparkles } from "lucide-react";
 
 export default function Skills() {
   const skillsData = [
@@ -63,43 +64,44 @@ export default function Skills() {
     "Critical Thinking",
     "Time Management",
   ];
-const hobbies = [
+
+  const hobbies = [
     "Gardening",
     "Listening Music",
     "Self Growth",
   ];
+
   return (
-    <section className="min-h-screen bg-black text-white px-6 py-20">
+    <section
+      id="skills"
+      className="min-h-screen bg-black text-white px-4 md:px-8 py-14"
+    >
       <div className="max-w-5xl mx-auto">
+        {/* TOP SPACE */}
+        <div className="flex items-center justify-between mb-10"></div>
 
-        {/* 🔹 HEADING (Same as About) */}
-        <div className="mb-16">
-          <p className="text-xs tracking-[0.4em] text-gray-500 mb-3">
-            SKILLS
-          </p>
-
-          <h2 className="text-3xl md:text-5xl font-bold tracking-wide">
+        {/* TECHNICAL SKILLS HEADER */}
+        <div className="flex items-center gap-3 mb-12">
+        
+          <h1 className="text-xl md:text-3xl font-bold tracking-wide">
             TECHNICAL EXPERTISE
-          </h2>
+          </h1>
 
-          <p className="text-xs tracking-[0.3em] text-gray-600 mt-2">
-            TECHNOLOGIES I WORK WITH
-          </p>
         </div>
+        <p className="text-gray-400 leading-8 max-w-3xl text-sm md:text-base mb-14">
+          Technologies, frameworks and tools I use to build scalable
+          backend systems, modern web applications and AI-powered
+          solutions.
+        </p>
 
-        {/* 🔹 SKILLS GRID */}
-        <div className="grid md:grid-cols-2 gap-8">
+        {/* SKILLS GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           {skillsData.map((category) => (
             <div
               key={category.title}
-              className="
-                p-6 rounded-xl
-                border border-white/10
-                backdrop-blur-md
-                transition-all duration-300
-              "
+              className="bg-[#080808] border border-white/10 rounded-2xl p-6 transition-all duration-300 hover:border-white/20"
             >
-              <h3 className="text-sm tracking-[0.2em] text-gray-400 mb-4 border-b border-white/10 pb-2">
+              <h3 className="text-xs tracking-[0.3em] text-gray-500 mb-4">
                 {category.title.toUpperCase()}
               </h3>
 
@@ -107,14 +109,7 @@ const hobbies = [
                 {category.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="
-                      text-xs px-3 py-1.5
-                      border border-white/10
-                      text-gray-300
-                      hover:text-white
-                      hover:border-white/30
-                      transition-all duration-200
-                    "
+                    className="text-xs px-3 py-1.5 border border-white/10 rounded-lg text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
                   >
                     {skill}
                   </span>
@@ -124,55 +119,61 @@ const hobbies = [
           ))}
         </div>
 
-        {/* 🔹 SOFT SKILLS */}
-        <div className="mt-12 pt-10 border-t border-white/10">
-          <h3 className="text-xs tracking-[0.4em] text-gray-500 text-center mb-6">
-            SOFT SKILLS
-          </h3>
+        {/* HORIZONTAL LINE & SOFT SKILLS HEADER */}
+        <div className="relative my-16">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-white/10"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <div className="flex items-center gap-3 bg-black px-6">
+              <h2 className="text-s tracking-[0.3em] text-gray-500">
+                SOFT SKILLS
+              </h2>
+            </div>
+          </div>
+        </div>
 
+        {/* SOFT SKILLS CONTENT */}
+        <div className="bg-[#080808] border border-white/10 rounded-2xl p-7">
           <div className="flex flex-wrap justify-center gap-3">
             {softSkills.map((skill) => (
               <span
                 key={skill}
-                className="
-                  text-xs px-4 py-1.5
-                  border border-white/10
-                  text-gray-300
-                  hover:text-white
-                  hover:border-white/30
-                  transition-all duration-200
-                "
+                className="text-xs px-4 py-1.5 border border-white/10 rounded-lg text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
               >
                 {skill}
               </span>
             ))}
           </div>
         </div>
- {/* 🔹 HOBBIES (NEW SECTION) */}
-        <div className="mt-12 pt-10 border-t border-white/10">
-          <h3 className="text-xs tracking-[0.4em] text-gray-500 text-center mb-6">
-            HOBBIES
-          </h3>
 
+        {/* HORIZONTAL LINE & HOBBIES HEADER */}
+        <div className="relative my-16">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-white/10"></div>
+          </div>
+          <div className="relative flex justify-center">
+            <div className="flex items-center gap-3 bg-black px-6">
+              <h2 className="text-s tracking-[0.3em] text-gray-500">
+                HOBBIES & INTERESTS
+              </h2>
+            </div>
+          </div>
+        </div>
+
+        {/* HOBBIES CONTENT */}
+        <div className="bg-[#080808] border border-white/10 rounded-2xl p-7">
           <div className="flex flex-wrap justify-center gap-3">
             {hobbies.map((hobby) => (
               <span
                 key={hobby}
-                className="
-                  text-xs px-4 py-1.5
-                  border border-white/10
-                  text-gray-300
-                  hover:text-white
-                  hover:border-white/30
-                  transition-all duration-200
-                "
+                className="text-xs px-4 py-1.5 border border-white/10 rounded-lg text-gray-300 hover:text-white hover:border-white/30 transition-all duration-200"
               >
                 {hobby}
               </span>
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

@@ -4,7 +4,6 @@ import {
   Briefcase,
   Folder,
   Mail,
-  GraduationCap,
   Trophy,
   BriefcaseBusiness,
 } from "lucide-react";
@@ -13,7 +12,6 @@ export const NAV_ITEMS = [
   { id: "home", label: "Home", href: "/", icon: Home },
   { id: "about", label: "About", href: "/about", icon: User },
   { id: "skills", label: "Skills", href: "/skills", icon: Briefcase },
-  { id: "education", label: "Education", href: "/education", icon: GraduationCap },
   { id: "experience", label: "Experience", href: "/experience", icon: BriefcaseBusiness },
   { id: "achievements", label: "Achievements", href: "/achievements", icon: Trophy },
   { id: "projects", label: "Projects", href: "/projects", icon: Folder },
