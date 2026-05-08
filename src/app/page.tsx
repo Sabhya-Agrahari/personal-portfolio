@@ -6,7 +6,7 @@ import { Mail } from "lucide-react";
 import { FaGithub, FaInstagram } from "react-icons/fa";
 import { Raleway } from "next/font/google";
 import ShimmerButton from "./(components)/Button";
-import { GitHubLink, InstagramLink, GmailLink } from "@/utils/sociallink.util";
+import { GitHubLink, InstagramLink, GmailLink } from "../utils/sociallink.util";
 
 const raleway = Raleway({
   subsets: ["latin"],
