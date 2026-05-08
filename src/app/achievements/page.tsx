@@ -60,27 +60,27 @@ export default function Achievements() {
             {[
               {
                 name: "HP LIFE – AI for Beginners",
-                link: "#",
+                link: "/certificates/ai-beginner.pdf",
               },
               {
                 name: "HP LIFE – Data Science and Analytics",
-                link: "#",
+                link: "/certificates/Data Science & Analytics.pdf",
               },
               {
                 name: "NullClass – Data Science Internship",
-                link: "#",
+                link: "/certificates/NullClass-Data-Science-Internship-Certificate.pdf",
               },
               {
                 name: "Internshala – Data Science Training",
-                link: "#",
+                link: "/certificates/Data Science Training-Internshala.pdf",
               },
               {
                 name: "Simplilearn – Power BI for Beginners",
-                link: "#",
+                link: "/certificates/Power bi certificate.pdf",
               },
               {
                 name: "Infoseek Technologies – Java Internship",
-                link: "#",
+                link: "certificates/images/310 Sabhya Agrahari.png",
               },
             ].map((cert, i) => (
               <div
