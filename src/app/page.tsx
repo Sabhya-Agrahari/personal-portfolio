@@ -73,7 +73,7 @@ export default function Home() {
        {/* CTA */}
 
  <div className="mt-12 flex justify-center gap-4 flex-wrap">
-  <ShimmerButton href="#projects">
+  <ShimmerButton href="/projects">
     View Projects
   </ShimmerButton>
 

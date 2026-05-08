@@ -25,7 +25,7 @@ const projects: Project[] = [
     challenges: ["Improving accuracy", "Lighting variations"],
   },
   {
-    title: "Travel Itenary",
+    title: "Travel Itinerary and Budget Planner ",
     desc: "AI-powered travel itinerary and budget generator.",
     tech: ["Django", "REST API", "Gemini API"],
     img: "/projects/travel.png",
