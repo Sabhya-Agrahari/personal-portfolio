@@ -1,10 +1,10 @@
 "use client";
 
-import { Mail, Sparkles, Code, Download, User, Briefcase, MailIcon } from "lucide-react";
-import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
+import {  Code, Download, MailIcon } from "lucide-react";
+import { FaGithub,  FaLinkedin } from "react-icons/fa";
 import { Raleway } from "next/font/google";
 import ShimmerButton from "./(components)/Button";
-import { GitHubLink, InstagramLink, GmailLink, LinkedInLink } from "../utils/sociallink.util";
+import { GitHubLink, GmailLink, LinkedInLink } from "../utils/sociallink.util";
 import Link from "next/link";
 
 const raleway = Raleway({
