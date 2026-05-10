@@ -1,139 +1,154 @@
 "use client";
 
-import { Trophy, Award, Medal, Star } from "lucide-react";
+import { Trophy, Award, Sparkles, Medal, Star } from "lucide-react";
+import ShimmerButton from "../(components)/Button";
 
 export default function Achievements() {
   return (
-    <section className="min-h-screen px-6 py-20 md:pl-36 bg-[#020617] text-white">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="achievements"
+      className="min-h-screen bg-black text-white px-4 md:px-8 py-14"
+    >
+      <div className="max-w-5xl mx-auto">
+        {/* TOP SPACE */}
+        <div className="flex items-center justify-between mb-10"></div>
 
-        {/* Heading */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-cyan-400">
-            Achievements
-          </h2>
-          <p className="text-gray-400 mt-3">
-            My milestones, certifications & accomplishments
-          </p>
+        {/* HEADER WITH SPARKLES */}
+        <div className="flex items-center gap-3 mb-6">
+          <h1 className="text-xl md:text-3xl font-bold tracking-wide">
+            ACHIEVEMENTS & CERTIFICATIONS
+          </h1>
         </div>
 
-        {/* 🏆 Academic Achievements */}
-        <div className="mb-14">
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 flex items-center gap-2">
-            <Trophy /> Academic Achievements
-          </h3>
+        <p className="text-gray-400 leading-8 max-w-3xl text-sm md:text-base mb-14">
+          A collection of academic accomplishments, professional milestones,
+          certifications, and activities that reflect my continuous learning
+          and growth in technology and software development.
+        </p>
 
-          <div className="grid md:grid-cols-2 gap-6">
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-cyan-400/20">
-              <h4 className="font-semibold text-lg flex items-center gap-2">
-                <Medal className="text-yellow-400" /> High School Topper
-              </h4>
-              <p className="text-gray-400 mt-2 text-sm">
-                Secured <span className="text-cyan-400 font-medium">3rd Rank</span> in High School (U.P. Board).
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-cyan-400/20">
-              <h4 className="font-semibold text-lg flex items-center gap-2">
-                <Star className="text-pink-400" /> Science Exhibition Winner
-              </h4>
-              <p className="text-gray-400 mt-2 text-sm">
-                Achieved <span className="text-cyan-400 font-medium">1st Rank</span> in Science Exhibition.
-              </p>
-            </div>
-
+        {/* ACADEMIC ACHIEVEMENTS */}
+        <div className="bg-[#080808] border border-white/10 rounded-3xl p-7 mb-5 transition-all duration-300 hover:border-white/20">
+          <div className="flex items-center gap-3 mb-6">
+            <Trophy className="w-5 h-5 text-gray-400" />
+            <h3 className="text-xs tracking-[0.3em] text-gray-500">
+              ACADEMIC ACHIEVEMENTS
+            </h3>
           </div>
+
+          <ul className="space-y-3 text-gray-300 text-sm leading-7">
+            <li className="flex items-start gap-3">
+              <Medal className="w-4 h-4 text-gray-500 mt-1.0 flex-shrink-0" />
+              <span>Secured <span className="text-white font-medium">3rd Rank</span> in High School (U.P. Board)</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <Medal className="w-4 h-4 text-gray-500 mt-1.0 flex-shrink-0" />
+              <span>Achieved <span className="text-white font-medium">1st Rank</span> in Science Exhibition</span>
+            </li>
+          </ul>
         </div>
 
-        {/* 🎓 Certifications */}
-        <div className="mb-14">
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6 flex items-center gap-2">
-            <Award /> Certifications
-          </h3>
+        {/* CERTIFICATIONS */}
+        <div className="bg-[#080808] border border-white/10 rounded-3xl p-7 mb-5 transition-all duration-300 hover:border-white/20">
+          <div className="flex items-center gap-3 mb-6">
+            <Award className="w-5 h-5 text-gray-400" />
+            <h3 className="text-xs tracking-[0.3em] text-gray-500">
+              CERTIFICATIONS
+            </h3>
+          </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              "HP LIFE – AI for Beginners",
-              "HP LIFE – Data Science and Analytics",
-              "NullClass – Data Science Internship",
-              "NullClass – Emotional Detector Training",
-              "Internshala – Data Science Training",
-              "Simplilearn – Power BI for Beginners",
-              "Infoseek Technologies – Java Internship",
+              {
+                name: "HP LIFE – AI for Beginners",
+                link: "/certificates/ai-beginner.pdf",
+              },
+              {
+                name: "HP LIFE – Data Science and Analytics",
+                link: "/certificates/Data Science & Analytics.pdf",
+              },
+              {
+                name: "NullClass – Data Science Internship",
+                link: "/certificates/NullClass-Data-Science-Internship-Certificate.pdf",
+              },
+              {
+                name: "Internshala – Data Science Training",
+                link: "/certificates/Data Science Training-Internshala.pdf",
+              },
+              {
+                name: "Simplilearn – Power BI for Beginners",
+                link: "/certificates/Power bi certificate.pdf",
+              },
+              {
+                name: "Infoseek Technologies – Java Internship",
+                link: "certificates/images/310 Sabhya Agrahari.png",
+              },
             ].map((cert, i) => (
               <div
                 key={i}
-                className="p-5 rounded-xl bg-[#0f172a] border border-white/10 hover:border-cyan-400/40 transition"
+                className="flex flex-col p-5 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 bg-white/[0.02] hover:bg-white/[0.04]"
               >
-                <p className="text-gray-300">{cert}</p>
+                <p className="text-gray-300 text-sm leading-6 mb-4 flex-1">
+                  {cert.name}
+                </p>
+                <ShimmerButton href={cert.link}>
+                  View Certificate
+                </ShimmerButton>
               </div>
             ))}
-
           </div>
         </div>
 
-        {/* 💼 Professional Highlights */}
-        <div className="mb-14">
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6">
-            Professional Highlights
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                🚀 Improved API performance by <span className="text-cyan-400">30%</span> 
-                using optimization & caching strategies.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                🔐 Implemented RBAC & authentication reducing access issues by 
-                <span className="text-cyan-400"> 40%</span>.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                ⚡ Reduced API response time to <span className="text-cyan-400">&lt;200ms</span>.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                📊 Identified $2.71M unsold inventory in vendor analysis project.
-              </p>
-            </div>
-
+        {/* PROFESSIONAL HIGHLIGHTS */}
+        <div className="bg-[#080808] border border-white/10 rounded-3xl p-7 mb-5 transition-all duration-300 hover:border-white/20">
+          <div className="flex items-center gap-3 mb-6">
+            <h3 className="text-xs tracking-[0.3em] text-gray-500">
+              PROFESSIONAL HIGHLIGHTS
+            </h3>
           </div>
+
+          <ul className="space-y-3 text-gray-300 text-sm leading-7">
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Improved API performance by <span className="text-white font-medium">30%</span></span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Implemented RBAC reducing issues by <span className="text-white font-medium">40%</span></span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Reduced API response time to <span className="text-white font-medium">&lt;200ms</span></span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Identified <span className="text-white font-medium">$2.71M</span> unsold inventory</span>
+            </li>
+          </ul>
         </div>
 
-        {/* 🌟 Extra Activities */}
-        <div>
-          <h3 className="text-2xl font-semibold text-cyan-400 mb-6">
-            Extra Activities
-          </h3>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                🎤 Attended workshops on Cyber Security & AI applications.
-              </p>
-            </div>
-
-            <div className="p-6 rounded-xl bg-[#0f172a] border border-white/10">
-              <p className="text-gray-300 text-sm">
-                💻 Active GitHub contributor with backend & data science projects.
-              </p>
-            </div>
-
+        {/* ACTIVITIES & INTERESTS */}
+        <div className="bg-[#080808] border border-white/10 rounded-3xl p-7 transition-all duration-300 hover:border-white/20">
+          <div className="flex items-center gap-3 mb-6">
+            <h3 className="text-xs tracking-[0.3em] text-gray-500">
+              ACTIVITIES & INTERESTS
+            </h3>
           </div>
-        </div>
 
+          <ul className="space-y-3 text-gray-300 text-sm leading-7">
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Attended workshops on Cyber Security & AI</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Active GitHub contributor</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="text-gray-500 mt-1.0">—</span>
+              <span>Passionate about backend architecture & scalable systems</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
   );
