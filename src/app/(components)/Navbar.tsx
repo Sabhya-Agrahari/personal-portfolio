@@ -65,7 +65,7 @@ export default function Navbar() {
       <nav className="fixed top-0 inset-x-0 z-50 flex justify-center pt-4">
         <button
           onClick={() => setOpen((p) => !p)}
-          className="px-4 py-2 flex items-center gap-1 text-[10px] tracking-[0.3em] text-gray-400 hover:text-white transition"
+          className="px-4 py-2 flex items-center gap-1 text-[10px] tracking-[0.3em] text-gray-400 hover:text-white transition cursor-pointer"
         >
           {open ? "CLOSE" : "MENU"}
           <ChevronRight
@@ -96,7 +96,7 @@ export default function Navbar() {
                 key={item.id}
                 onClick={() => handleClick(item)}
                 className={`
-                  w-full justify-between
+                  w-full justify-between cursor-pointer
                   ${active === item.id ? "scale-[1.03]" : ""}
                   ${open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"}
                 `}

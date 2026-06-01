@@ -296,7 +296,7 @@ export default function ContactPage() {
                 <ShimmerButton
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full md:w-auto"
+                  className="w-full md:w-auto cursor-pointer"
                 >
                   {status === "loading" ? (
                     <span className="flex items-center gap-2">
