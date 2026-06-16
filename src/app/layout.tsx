@@ -9,13 +9,14 @@ import Loader from "./(components)/Loader";
 const siteUrl = "https://sabhya-agrahari-portfolio.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-
+  verification: {
+    google: "google035e4df563d45e2d",
+  },
   title: "Software Developer",
   description:
     "Sabhya Agrahari is a Software Developer specializing in Python, Java, Full Stack Development, and AI/ML.",
-
-
-  keywords: [
+    
+    keywords: [
     "Software Developer",
     "Python Developer",
     "Java Developer",
