@@ -3,7 +3,7 @@
 import type { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sabhya-agrahari-portfolio.vercel.app/';
+  const baseUrl = 'https://sabhya-agrahari-portfolio.vercel.app';
 
   return [
     {
