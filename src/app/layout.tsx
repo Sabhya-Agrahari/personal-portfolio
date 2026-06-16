@@ -4,20 +4,29 @@ import { Suspense } from "react";
 import Sidebar from "./(components)/Navbar";
 import Loader from "./(components)/Loader";
 
-import { Raleway } from "next/font/google";
 
-const raleway = Raleway({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
 
-const siteUrl = "http://localhost:3000";
+const siteUrl = "https://sabhya-agrahari-portfolio.vercel.app";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
 
   title: "Software Developer",
   description:
     "Sabhya Agrahari is a Software Developer specializing in Python, Java, Full Stack Development, and AI/ML.",
+
+
+  keywords: [
+    "Software Developer",
+    "Python Developer",
+    "Java Developer",
+    "Full Stack Developer",
+    "AI Engineer",
+    "Machine Learning",
+    "Next.js",
+    "React",
+  ],
+
+  authors: [{ name: "Sabhya Agrahari" }],
 
   openGraph: {
     title: "Sabhya Agrahari | Software Developer",
@@ -30,8 +39,8 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: `${siteUrl}/Image.jpg`,
-        width: 630,
+        url: `${siteUrl}/logo.png`,
+        width: 354,
         height: 630,
         alt: "Sabhya Agrahari Portfolio",
       },
@@ -40,13 +49,7 @@ export const metadata: Metadata = {
     type: "website",
   },
 
-  twitter: {
-    card: "summary_large_image",
-    title: "Sabhya Agrahari Portfolio",
-    description:
-      "Software Developer | Python | Full Stack | AI/ML",
-    images: [`${siteUrl}/Image.jpg`],
-  },
+ 
 };
 
 export default function RootLayout({
