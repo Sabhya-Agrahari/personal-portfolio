@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     "React",
   ],
 
+  icons: {
+      icon: "/logo.jpg",
+      apple: "/logo.jpg",
+    },
+    
   authors: [{ name: "Sabhya Agrahari" }],
 
   openGraph: {
