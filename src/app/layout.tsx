@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     "React",
   ],
 
+  icons: {
+      icon: "/logo.jpg",
+      apple: "/logo.jpg",
+    },
+    
   authors: [{ name: "Sabhya Agrahari" }],
 
   openGraph: {
@@ -40,9 +45,9 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: `${siteUrl}/logo.png`,
-        width: 354,
-        height: 630,
+        url: `${siteUrl}/logo.jpg`,
+        width: 441,
+        height: 441,
         alt: "Sabhya Agrahari Portfolio",
       },
     ],
@@ -60,7 +65,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#020617] text-white antialiased flex flex-col min-h-screen overflow-x-hidden">
+      <body className="bg-black text-white antialiased flex flex-col min-h-screen overflow-x-hidden">
 
        <Suspense fallback={<Loader />}>
 
